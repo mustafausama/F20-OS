@@ -1,0 +1,122 @@
+/usr/bin/winetricks:    w_try "$WINE" mingw-get install gcc msys-base
+/usr/bin/winetricks:        w_info "FYI: Quiet mode will install these mingw packages: 'gcc msys-base'"
+/usr/bin/winetricks:            # Note: 'libgcc_s_sjlj-1.dll' is not included in the 64-bit build
+/usr/bin/winetricks:    installed_exe1="c:/MinGW/bin/gcc.exe" \
+/usr/bin/inxi:	unshift @gccs, $gcc;
+/usr/bin/inxi:		@temp = globber('/usr/bin/gcc-*');
+/usr/bin/inxi:sub get_gcc_data {
+/usr/bin/inxi:		# strip out: gcc (Debian 6.3.0-18) 6.3.0 20170516
+/usr/bin/inxi:	return @gccs;
+/usr/bin/inxi:				push @gccs, $1;
+/usr/bin/inxi:	my @gccs = get_gcc_data();
+/usr/bin/inxi:	my @files = main::globber('/usr/bin/gcc*');
+/usr/bin/inxi:	my ($gcc,@data,@gccs,@temp);
+/usr/bin/inxi:	my $gcc_alt = '';
+/usr/bin/inxi:		my $compiler = ($b_gcc || $b_clang) ? '': 'N/A';
+/usr/bin/inxi:	my ($b_gcc,$gcc,$index,$ref,%row);
+/usr/bin/inxi:	log_data('dump','@gccs',\@gccs) if $b_log;
+/usr/bin/inxi:	if (my $program = check_program('gcc') ){
+/usr/bin/inxi:	if (@gccs){
+/usr/bin/inxi:			if (/\/gcc-([0-9.]+)$/){
+/usr/bin/inxi:	if ($gcc){
+/usr/bin/inxi:		if ($extra > 1 && @gccs){
+/usr/bin/inxi:			if ( $extra > 1 && $gcc_alt){
+/usr/bin/inxi:		if ($b_gcc){
+/usr/bin/inxi:		# glob /usr/bin for gccs, strip out all non numeric values
+/usr/bin/inxi:	['gcc','--version'],
+/usr/bin/inxi:		# gcc (GCC) 4.2.2 20070831 prerelease [FreeBSD]
+/usr/bin/inxi:	'gcc' => ['^gcc',3,'--version','GCC',1,0,0],
+/usr/bin/inxi:	'gcc-apple' => ['Apple[[:space:]]LLVM',2,'--version','LLVM',1,0,0],
+/usr/bin/inxi:	['2', '-S', '', "Kernel gcc version; system base of distro (if relevant 
+/usr/bin/inxi:	['2', '-I', '', "Other detected installed gcc versions (if present). System 
+/usr/bin/inxi:				$working[1] =~ /.*(gcc|clang)\sversion\s([\S]+)\s.*/;
+/usr/bin/inxi:		$result =~ /(gcc|clang).*version\s([\S]+)/;
+/usr/bin/inxi:		# $result = $result =~ /\*(gcc|clang)\*eval\*/;
+/usr/bin/inxi:		$gcc = shift @gccs;
+/usr/bin/inxi:		$gcc =~ s/\([^\)]*\)//g;
+/usr/bin/inxi:	$gcc ||= 'N/A';
+/usr/bin/inxi:		$gcc = get_piece($gcc,2);
+/usr/bin/inxi:		$gcc = awk(\@data,'^gcc');
+/usr/bin/inxi:			$gcc_alt = join '/', @gccs;
+/usr/bin/inxi:		$data{'gcc-versions'} = undef;
+/usr/bin/inxi:		$data{'gcc-versions'} = join "\n",@files;
+/usr/bin/inxi:			$data{$data_name}[$index]{main::key($num++,'gcc')} = $gcc;
+/usr/bin/inxi:				$data{$data_name}[$index]{main::key($num++,'alt')} = $gcc_alt;
+/usr/bin/inxi:		$b_gcc = 1;
+/usr/bin/h2xs:      my @styles = $Config{gccversion} ? qw(C++ C9X GNU) : qw(C++ C9X);
+/usr/bin/h2ph:# non-GCC?) C compilers, but gcc uses additional include directories.
+/usr/bin/h2ph:    my $from_gcc   = `LC_ALL=C $Config{cc} -v -E - < /dev/null 2>&1 | awk '/^#include/, /^End of search list/' | grep '^ '`;
+/usr/bin/h2ph:    length($from_gcc) ? (split(' ', $from_gcc), $Config{usrinc}) : ($Config{usrinc});
+/usr/bin/c99-gcc:# The following options are the same (as of gcc-3.3):
+/usr/bin/c99-gcc:exec gcc $extra_flag ${1+"$@"}
+/usr/bin/c89-gcc:# The following options are the same (as of gcc-2.95):
+/usr/bin/c89-gcc:exec gcc $extra_flag ${1+"$@"}
+/usr/bin/bashbug:CC="gcc"
+Binary file /usr/bin/zipsplit matches
+Binary file /usr/bin/zipnote matches
+Binary file /usr/bin/zip matches
+Binary file /usr/bin/zipinfo matches
+Binary file /usr/bin/zipcloak matches
+Binary file /usr/bin/x86_64-linux-gnu-strip matches
+Binary file /usr/bin/x86_64-linux-gnu-readelf matches
+Binary file /usr/bin/x86_64-linux-gnu-objdump matches
+Binary file /usr/bin/x86_64-linux-gnu-objcopy matches
+Binary file /usr/bin/x86_64-linux-gnu-nm matches
+Binary file /usr/bin/x86_64-linux-gnu-ld.gold matches
+Binary file /usr/bin/x86_64-linux-gnu-ld.bfd matches
+Binary file /usr/bin/x86_64-linux-gnu-gcov-tool-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcov-dump-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcov-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcc-ranlib-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcc-nm-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcc-ar-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-gcc-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-g++-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-dwp matches
+Binary file /usr/bin/x86_64-linux-gnu-cpp-9 matches
+Binary file /usr/bin/x86_64-linux-gnu-as matches
+Binary file /usr/bin/wget matches
+Binary file /usr/bin/vim.tiny matches
+Binary file /usr/bin/unzip matches
+Binary file /usr/bin/ubuntu-report matches
+Binary file /usr/bin/troff matches
+Binary file /usr/bin/telnet.netkit matches
+Binary file /usr/bin/tbl matches
+Binary file /usr/bin/soelim matches
+Binary file /usr/bin/snap matches
+Binary file /usr/bin/ps matches
+Binary file /usr/bin/preconv matches
+Binary file /usr/bin/ppdpo matches
+Binary file /usr/bin/ppdi matches
+Binary file /usr/bin/ppdhtml matches
+Binary file /usr/bin/ppdc matches
+Binary file /usr/bin/pic matches
+Binary file /usr/bin/perl matches
+Binary file /usr/bin/perl5.30.0 matches
+Binary file /usr/bin/pavucontrol matches
+Binary file /usr/bin/lshw matches
+Binary file /usr/bin/grotty matches
+Binary file /usr/bin/grops matches
+Binary file /usr/bin/groff matches
+Binary file /usr/bin/gnome-system-monitor matches
+Binary file /usr/bin/gimp-console-2.10 matches
+Binary file /usr/bin/gimp-2.10 matches
+Binary file /usr/bin/gdbserver matches
+Binary file /usr/bin/gdb matches
+Binary file /usr/bin/eqn matches
+Binary file /usr/bin/busybox matches
+Binary file /usr/bin/apt-sortpkgs matches
+Binary file /usr/bin/apt matches
+Binary file /usr/bin/apt-mark matches
+Binary file /usr/bin/apt-get matches
+Binary file /usr/bin/apt-ftparchive matches
+Binary file /usr/bin/apt-extracttemplates matches
+Binary file /usr/bin/apt-config matches
+Binary file /usr/bin/apt-cdrom matches
+Binary file /usr/bin/apt-cache matches
+/usr/bin/x86_64-linux-gnu-gcc-ranlib-9
+/usr/bin/x86_64-linux-gnu-gcc-nm-9
+/usr/bin/x86_64-linux-gnu-gcc-ar-9
+/usr/bin/x86_64-linux-gnu-gcc-9
+/usr/bin/c99-gcc
+/usr/bin/c89-gcc

@@ -1,0 +1,8 @@
+    1  clear
+    2  mkdir ~/week1
+    3  cd ~/week1
+    4  grep -r "gcc" "/usr/bin" | sort -r >> ~/week1/ex1.txt
+    5  grep -r "gcc" "/usr/bin" | sort -r
+    6  find /usr/bin -type f -name "*gcc*" | sort -r
+    7  find /usr/bin -type f -name "*gcc*" | sort -r >> ~/week1/ex1.txt
+    8  history >> ex2.txt
